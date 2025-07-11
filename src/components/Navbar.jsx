@@ -1,13 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark w-100">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <NavLink to="/" className="navbar-brand">
           Mi <strong>Tienda</strong>
-        </a>
+        </NavLink>
+
         <button
           className="navbar-toggler"
           type="button"
@@ -19,25 +21,43 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div
           className="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
           <ul className="navbar-nav d-flex flex-row gap-4 align-items-center mb-0">
+            {/* Rutas fijas por categoría */}
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <NavLink className="nav-link" to="/">
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <NavLink className="nav-link" to="/category/smartphones">
+                Smartphones
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/category/laptops">
+                Laptops
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/category/fragrances">
+                Fragancias
+              </NavLink>
+            </li>
+            {/* Otras secciones */}
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/about">
                 Acerca de Nosotros
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <NavLink className="nav-link" to="/contacto">
                 Contacto
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
               <CartWidget />

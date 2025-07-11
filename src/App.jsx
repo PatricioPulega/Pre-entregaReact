@@ -1,11 +1,24 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import Cart from "./components/Cart";
+import About from "./components/About";
+import Contacto from "./components/Contacto";
 function App() {
   return (
     <>
       <Navbar />
-      <ItemListContainer mensaje="Productos" />
+      <Routes>
+        <Route path="/" element={<ItemListContainer mensaje="Productos" />} />
+        <Route path="/category/:categoryId" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="*" element={<h2>404 - Página no encontrada</h2>} />
+      </Routes>
     </>
   );
 }
