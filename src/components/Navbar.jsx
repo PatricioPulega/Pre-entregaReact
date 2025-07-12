@@ -27,7 +27,6 @@ const Navbar = () => {
           id="navbarNav"
         >
           <ul className="navbar-nav d-flex flex-row gap-4 align-items-center mb-0">
-            {/* Rutas fijas por categoría */}
             <li className="nav-item">
               <NavLink className="nav-link" to="/">
                 Home
@@ -48,7 +47,6 @@ const Navbar = () => {
                 Fragancias
               </NavLink>
             </li>
-            {/* Otras secciones */}
             <li className="nav-item">
               <NavLink className="nav-link" to="/about">
                 Acerca de Nosotros
